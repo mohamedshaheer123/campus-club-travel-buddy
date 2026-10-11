@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Club and Travel Buddy</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fb;
+      margin: 0;
+      padding: 25px;
+      color: #222;
+    }
+
+    h1 {
+      color: #214c91;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px #00000012;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 11px 18px;
+      border: 0;
+      border-radius: 6px;
+      background: #2458a6;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #173d78;
+    }
+
+    a {
+      display: inline-block;
+      margin: 15px 12px 0 0;
+      color: #2458a6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Campus Club and Travel Buddy</h1>
+
+    <section class="card">
+      <h2>Campus Club Member Management</h2>
+
+      <form action="/members" method="POST">
+        <label>Member ID</label>
+        <input name="memberId" required>
+
+        <label>Name</label>
+        <input name="name" required>
+
+        <label>Club Name</label>
+        <input name="clubName" required>
+
+        <label>Year</label>
+        <input type="number" name="year" min="1" required>
+
+        <label>Role</label>
+        <input name="role" required>
+
+        <label>Points</label>
+        <input type="number" name="points" min="0" required>
+
+        <label>Interests</label>
+        <input name="interests">
+
+        <label>Status</label>
+        <input name="status" value="Active">
+
+        <button type="submit">Add Member</button>
+      </form>
+
+      <a href="/members" target="_blank">View All Members</a>
+      <a href="/members-sort" target="_blank">Sort by Points</a>
+    </section>
+
+    <section class="card">
+      <h2>Travel Buddy Finder</h2>
+
+      <form action="/buddies" method="POST">
+        <label>Buddy ID</label>
+        <input name="buddyId" required>
+
+        <label>Name</label>
+        <input name="name" required>
+
+        <label>Destination</label>
+        <input name="destination" required>
+
+        <label>Age</label>
+        <input type="number" name="age" min="1" required>
+
+        <label>Budget (₹)</label>
+        <input type="number" name="budget" min="0" required>
+
+        <label>Trip Duration (days)</label>
+        <input type="number" name="tripDuration" min="1" required>
+
+        <label>Interests</label>
+        <input name="interests">
+
+        <label>Status</label>
+        <input name="status" value="Available">
+
+        <button type="submit">Add Travel Buddy</button>
+      </form>
+
+      <a href="/buddies" target="_blank">View All Travel Buddies</a>
+      <a href="/buddies-sort" target="_blank">Sort by Budget</a>
+    </section>
+  </div>
+</body>
+</html>
